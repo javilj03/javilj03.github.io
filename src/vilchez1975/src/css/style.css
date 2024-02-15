@@ -1,27 +1,37 @@
 body {
     font-family: 'Arial', sans-serif;
+    color:white;
     margin: 0;
     padding: 0;
-    background-color: rgb(234, 226, 183);
+    background-color: #AD2831;
 }
 
 article {
     max-width: 60%;
     margin: 0 auto;
     margin-top: 2%;
-    padding: 2%;
-    background-color: rgb(252, 191, 73);
+    padding: 1.5em;
+    background-color: #38040E;
     border-radius: 1em;
 }
+
 @media only screen and (max-width: 767px) {
+    body{
+        background-color: #38040E;
+    }
     article {
         max-width: 100%;
     }
+
+    .especiales > span{
+        margin-left:-10px;
+    }
     .tabla-tipos{
-        background-color: red;
+        margin-left:0.5em;
     }
 
 }
+
 h1 {
     margin: 0;
 
@@ -29,7 +39,7 @@ h1 {
 
 h4 {
     margin: 0;
-    color: #666;
+    color: #c7c7c7;
 }
 
 header {
@@ -37,7 +47,7 @@ header {
     justify-content: space-around;
     align-items: center;
     padding: 10px;
-    background-color: #f2f2f2;
+    background-color: #640D14;
 }
 
 .same-options {
@@ -51,58 +61,70 @@ header {
 .menu-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 0.5em;
 }
 
 .nombre-bocadillo {
 
     display: inline-flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.8em;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: flex-start;
-    align-content: normal;    
+    align-content: normal;
 
 }
-.especiales{
+
+.especiales {
     display: flex;
     justify-content: space-between;
     margin: 1em 0em 1em 1em;
 }
-#aux{
+
+#aux {
     width: 1em;
 }
-#grupo-bocadillos{
-    background-color: rgb(247, 127, 0);
-    margin: 0px -10px 0px -10px;
-    padding: 10px;
+
+#grupo-bocadillos {
+    background-color: #800E13;
+    margin: 1em -0.5em 1em -0.5em;
+    padding: 0.5em;
     border-radius: 20px;
 }
-.tabla-tipos{
+
+.tabla-tipos {
     border-radius: 20px;
     padding: 0.5em;
-    background-color: rgb(214, 40, 40,0.5);
+    background-color: #640D14;
 }
 
 .types-raciones {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+
 }
 
 .type {
     display: flex;
-    padding: 0.5em;
+    height: 4em;
+    width: 10em;
+    padding: 0.2em;
+    margin:0.2em;
     border-radius: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(214, 40, 40,0.5);
+    
+    background-color: #640D14;
 }
-.raciones{
-    background-color: rgb(247, 127, 0);
+.type > span {
+    
+    text-align: center;
+}
+.raciones {
+    background-color: #800E13;
     border-radius: 0.5em;
     padding: 0.5em;
     margin-bottom: 0.5em;
