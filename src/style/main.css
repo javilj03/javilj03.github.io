@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+/* https://coolors.co/403f4c-2c2b3c-1b2432-121420 */
 
 body {
   background-color: #403F4C;
@@ -89,5 +89,197 @@ h1 {
     width: 100%;
     text-align: center;
     padding: 0.9rem 1rem;
+  }
+}
+/* ...existing code... */
+
+/* About / Sobre mí */
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+}
+
+.about-inner {
+  display: flex;
+  gap: 2rem;
+  width: min(90vw, 1000px);
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+  color: #F0F0F0;
+}
+
+.about-text h2 {
+  font-family: 'Space Mono', monospace;
+  margin: 0 0 0.8rem 0;
+  font-size: 2.2rem;
+  color: #F0F0F0;
+}
+
+.about-text p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #dcdcdc;
+}
+
+.about-text a {
+  color: #F0F0F0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+
+.about-image {
+  width: 260px;
+  flex: 0 0 260px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  border: 2px solid rgba(255,255,255,0.03);
+}
+
+/* Responsive: apilar en pantallas pequeñas */
+@media (max-width: 800px) {
+  .about-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .about-image {
+    width: 160px;
+  }
+  .about-text h2 {
+    text-align: center;
+  }
+}
+
+.skills-section {
+  padding: 3.5rem 0;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(18,20,32,0.02), transparent);
+}
+
+.skills-inner {
+  width: min(90vw, 1000px);
+}
+
+.skills-inner h2 {
+  font-family: 'Space Mono', monospace;
+  color: #F0F0F0;
+  font-size: 1.9rem;
+  margin: 0 0 1rem 0;
+}
+
+/* List */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Item: icon | info (name + bar) | percent */
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255,255,255,0.02);
+  padding: 0.8rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Icon */
+.skill-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(0,0,0,0.08));
+  color: #F0F0F0;
+  flex: 0 0 56px;
+}
+
+/* Info: name + bar */
+.skill-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.skill-name {
+  color: #F0F0F0;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.45rem;
+}
+
+/* Progress bar */
+.skill-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-fill {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #7b61ff, #5ec2ff);
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(123,97,255,0.18);
+  transition: width 900ms cubic-bezier(.2,.9,.3,1);
+  /* animate on load to the CSS var --percent */
+  animation: fillBar 900ms forwards;
+}
+
+/* Percent text at the right */
+.skill-percent {
+  width: 48px;
+  text-align: right;
+  color: #dcdcdc;
+  font-weight: 700;
+  flex: 0 0 48px;
+}
+
+/* Keyframes: use CSS variable set inline on .skill-item */
+@keyframes fillBar {
+  to { width: var(--percent); }
+}
+
+/* Ensure that aria-valuenow reflects the visual percentage */
+.skill-item[style*="--percent"] .skill-percent::after {
+  /* no-op: value shown in markup; kept for possible JS sync */
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 700px) {
+  .skill-item {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+  .skill-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+    flex: 0 0 48px;
+  }
+  .skill-percent {
+    width: 44px;
+    font-size: 0.9rem;
   }
 }
