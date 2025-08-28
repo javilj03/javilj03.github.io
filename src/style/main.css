@@ -213,6 +213,16 @@ h1 {
   flex: 0 0 56px;
 }
 
+/* Ajuste para imágenes dentro del icono (por ejemplo src/images/cpp-logo.svg) */
+.skill-icon img {
+  max-width: 72%;
+  max-height: 72%;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 /* Info: name + bar */
 .skill-info {
   flex: 1;
